@@ -22,11 +22,18 @@ function Header() {
 
     <h2 className='font-bold text-lg bg-black text-white px-2 p-1'>RETRO MARKET</h2>
 
-    <ul className='flex gap-5 ml-8'>
-      {menuList.map((menu, index)=>
-        <li className='border-2 border-primary hover:border-2 hover:border-white px-2 p-1 cursor-pointer' key={index}>{menu?.name}</li>
-      )}
-    </ul>
+    <ul className="hidden md:flex gap-5 ml-8">
+  {menuList.map((menu, index) => (
+    <li
+      className="border-2 border-primary hover:border-white px-2 py-1 cursor-pointer transition-colors duration-200 ease-in-out"
+      key={index}
+      title={menu?.name}
+    >
+      {menu?.name}
+    </li>
+  ))}
+</ul>
+
     <div className='flex gap-5 items-center'>
       <ShoppingBag/>
       <Button className="bg-red-500 hover:bg-red-500">Start Selling</Button>
